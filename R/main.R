@@ -19,7 +19,7 @@ create_reports <- function(...) {
     input = loc,
     output_file = paste0(current$branch, "_", this_year, "_", this_month ,".pdf"),
     output_dir = paste0("finished_reports"),
-    intermediates_dir = "/finished_reports/tex",
+    intermediates_dir = "finished_reports/tex",
     clean = T,
     params = list(branch = current$branch,
                   month = this_month,

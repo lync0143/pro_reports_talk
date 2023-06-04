@@ -24,7 +24,7 @@ mydata <- DBI::dbGetQuery(conn = db,
 right_now <- paste0(this_year, "-", this_month)
 
 final <- mydata %>% 
-  dplyr::filter(date == right_now) %>% 
+  dplyr::filter(date == max(date)) %>% 
   
   dplyr::rename('Branch' = branch,
                 'Loans & Leases' = loans_leases,
@@ -55,7 +55,7 @@ final <- mydata %>%
 
   
 
-names(final) <- c("", right_now) 
+names(final) <- c("", max(mydata$date)) 
 ```
 
 ## Income Statement
